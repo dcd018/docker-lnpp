@@ -4,13 +4,13 @@ An LNPP Docker Compose stack that attempts to account for OS specific caveats su
 
 ```
 ├── app
-│         ├── .docker
-  |            |             |── Dockerfile
-  |            |             |── Dockerfile.prod
+│   ├── .docker
+|   |    |── Dockerfile
+|   |    |── Dockerfile.prod
 ├── srv
-│         ├── .docker
-  |            |             |── Dockerfile.prod
-  |            |             |── default.conf
+│   ├── .docker
+|   |    |── Dockerfile.prod
+|   |    |── default.conf
 ```
 
 `docker-compose up -d` will, by default, build containers with bind mounts. There are several issues associated with file-system permissions and persistent storage when mounting volumes shared between Windows hosts and non-Windows containers.
