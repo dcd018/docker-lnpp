@@ -1,0 +1,9 @@
+FROM php:7.2-fpm-alpine
+
+COPY ./ /var/www/html/
+
+RUN chown -R www-data:www-data /var/www/html/
+
+RUN set -ex && apk --no-cache add postgresql-dev
+RUN docker-php-ext-install pgsql pdo_pgsql && \
+  docker-php-ext-enable pgsql pdo_pgsql

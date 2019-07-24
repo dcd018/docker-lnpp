@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cat << EOT > .env
+HOST_UID=$(id -u $USER)
+HOST_GID=$(id -g $USER)
+EOT
